@@ -1,0 +1,126 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Course;
+use App\Models\Teacher;
+use App\Models\Work;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class WorksSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $works = [
+            ['title' => 'Algebra Basics', 'description' => 'Solve simple equations and practice variable manipulation'],
+            ['title' => 'Geometry Fundamentals', 'description' => 'Identify shapes, measure angles, and calculate areas'],
+            ['title' => 'Introduction to Python', 'description' => 'Write your first Python program and learn basic syntax'],
+            ['title' => 'Functions in Python', 'description' => 'Learn how to create and use functions in Python'],
+            ['title' => 'Loops and Conditionals', 'description' => 'Practice for and while loops and if-else statements'],
+            ['title' => 'Data Structures: Lists', 'description' => 'Learn to create, access, and manipulate lists in Python'],
+            ['title' => 'Data Structures: Dictionaries', 'description' => 'Store and retrieve data using Python dictionaries'],
+            ['title' => 'Introduction to Chemistry', 'description' => 'Learn basic concepts of atoms, molecules, and chemical reactions'],
+            ['title' => 'Acid-Base Reactions', 'description' => 'Perform lab experiments to observe acid-base reactions'],
+            ['title' => 'Physics: Motion', 'description' => 'Learn about velocity, acceleration, and Newton’s laws'],
+            ['title' => 'Work and Energy', 'description' => 'Calculate work done and understand kinetic and potential energy'],
+            ['title' => 'Electric Circuits', 'description' => 'Build simple circuits and measure current and voltage'],
+            ['title' => 'Biology: Cell Structure', 'description' => 'Observe plant and animal cells under the microscope'],
+            ['title' => 'Photosynthesis', 'description' => 'Experiment with light and plant growth to understand photosynthesis'],
+            ['title' => 'Human Circulatory System', 'description' => 'Learn the structure of the heart and blood flow through experiments'],
+            ['title' => 'World History: Ancient Civilizations', 'description' => 'Study Mesopotamia, Egypt, and early societies'],
+            ['title' => 'World History: Middle Ages', 'description' => 'Explore feudal systems, kingdoms, and medieval life'],
+            ['title' => 'English Grammar: Past Tense', 'description' => 'Practice forming and using past tense in sentences'],
+            ['title' => 'English Vocabulary: Daily Life', 'description' => 'Learn common words for everyday activities'],
+            ['title' => 'Reading Comprehension', 'description' => 'Read passages and answer comprehension questions'],
+            ['title' => 'Creative Writing', 'description' => 'Write short stories and descriptive paragraphs'],
+            ['title' => 'Art: Drawing Basics', 'description' => 'Learn sketching techniques and shading for objects'],
+            ['title' => 'Art: Perspective Drawing', 'description' => 'Draw objects using one-point and two-point perspective'],
+            ['title' => 'Music: Reading Sheet Music', 'description' => 'Practice reading and playing notes on an instrument'],
+            ['title' => 'Music: Rhythm and Tempo', 'description' => 'Practice clapping, tapping, and playing rhythms'],
+            ['title' => 'Geography: Maps and Coordinates', 'description' => 'Learn latitude, longitude, and map reading skills'],
+            ['title' => 'Geography: Rivers and Mountains', 'description' => 'Identify major rivers and mountain ranges'],
+            ['title' => 'Computer Networks Basics', 'description' => 'Learn about IP addresses, routers, and basic networking concepts'],
+            ['title' => 'Operating Systems Fundamentals', 'description' => 'Understand processes, memory, and file systems'],
+            ['title' => 'Introduction to SQL', 'description' => 'Write queries to create, read, update, and delete data'],
+            ['title' => 'Advanced SQL', 'description' => 'Learn joins, subqueries, and aggregate functions'],
+            ['title' => 'Web Development: HTML & CSS', 'description' => 'Build a simple webpage using HTML and CSS'],
+            ['title' => 'JavaScript Basics', 'description' => 'Write scripts to make webpages interactive'],
+            ['title' => 'React Basics', 'description' => 'Create reusable components and manage state in React'],
+            ['title' => 'Laravel Basics', 'description' => 'Build a basic CRUD application with Laravel'],
+            ['title' => 'APIs and REST', 'description' => 'Consume APIs and fetch data using HTTP requests'],
+            ['title' => 'Python: File Handling', 'description' => 'Read and write files using Python scripts'],
+            ['title' => 'Python: Error Handling', 'description' => 'Handle exceptions and debug errors in Python programs'],
+            ['title' => 'Statistics: Mean, Median, Mode', 'description' => 'Calculate basic statistical measures from data'],
+            ['title' => 'Statistics: Probability', 'description' => 'Understand probability concepts and solve simple problems'],
+            ['title' => 'Robotics Basics', 'description' => 'Learn how sensors and motors work and build simple robots'],
+            ['title' => 'IoT Fundamentals', 'description' => 'Connect sensors to microcontrollers and read data'],
+            ['title' => 'Digital Marketing Basics', 'description' => 'Learn about SEO, social media, and content marketing'],
+            ['title' => 'Project Management', 'description' => 'Learn task planning, time management, and team collaboration'],
+            ['title' => 'Leadership Skills', 'description' => 'Develop leadership and decision-making skills'],
+            ['title' => 'Ethical Hacking Basics', 'description' => 'Understand basic cybersecurity and penetration testing principles'],
+            ['title' => 'Machine Learning Introduction', 'description' => 'Learn concepts like supervised and unsupervised learning'],
+            ['title' => 'Deep Learning Basics', 'description' => 'Create simple neural networks using Python libraries'],
+            ['title' => 'Cloud Computing Introduction', 'description' => 'Learn cloud services like AWS, Azure, and GCP'],
+            ['title' => 'Docker Basics', 'description' => 'Containerize applications and understand Docker workflow'],
+            ['title' => 'Kubernetes Fundamentals', 'description' => 'Deploy containers and manage clusters with Kubernetes'],
+            ['title' => 'Algebra: Quadratic Equations', 'description' => 'Solve quadratic equations using factoring and the quadratic formula'],
+            ['title' => 'Geometry: Circles', 'description' => 'Learn properties of circles and solve related problems'],
+            ['title' => 'Trigonometry Basics', 'description' => 'Understand sine, cosine, tangent and solve simple problems'],
+            ['title' => 'Calculus: Limits', 'description' => 'Learn how to calculate limits of functions'],
+            ['title' => 'Calculus: Derivatives', 'description' => 'Practice finding derivatives and apply to simple functions'],
+            ['title' => 'Statistics: Data Visualization', 'description' => 'Create graphs and charts from datasets'],
+            ['title' => 'Probability: Events', 'description' => 'Calculate probabilities of single and combined events'],
+            ['title' => 'Physics: Forces', 'description' => 'Solve problems involving force, mass, and acceleration'],
+            ['title' => 'Physics: Energy Conservation', 'description' => 'Learn about kinetic and potential energy in systems'],
+            ['title' => 'Chemistry: Atomic Structure', 'description' => 'Study protons, neutrons, electrons, and isotopes'],
+            ['title' => 'Chemistry: Periodic Table', 'description' => 'Learn groups, periods, and element properties'],
+            ['title' => 'Biology: DNA and RNA', 'description' => 'Understand structure and function of DNA and RNA'],
+            ['title' => 'Biology: Genetics', 'description' => 'Learn about Mendelian inheritance and genetic traits'],
+            ['title' => 'English: Reading Comprehension', 'description' => 'Read passages and answer questions about main ideas'],
+            ['title' => 'English: Writing Paragraphs', 'description' => 'Practice writing clear and organized paragraphs'],
+            ['title' => 'English: Grammar Review', 'description' => 'Practice parts of speech, tenses, and sentence structure'],
+            ['title' => 'French: Basic Conversation', 'description' => 'Learn greetings, introductions, and simple dialogues'],
+            ['title' => 'French: Vocabulary Practice', 'description' => 'Practice common words and phrases for daily life'],
+            ['title' => 'Spanish: Grammar Basics', 'description' => 'Learn verbs, nouns, and sentence formation'],
+            ['title' => 'Spanish: Speaking Practice', 'description' => 'Practice dialogues and pronunciation'],
+            ['title' => 'History: Ancient Rome', 'description' => 'Study Roman Empire, culture, and historical events'],
+            ['title' => 'History: Middle Ages', 'description' => 'Learn about medieval life, feudalism, and castles'],
+            ['title' => 'Geography: Continents and Oceans', 'description' => 'Identify continents, oceans, and major countries'],
+            ['title' => 'Geography: Climate Zones', 'description' => 'Understand different climate zones and weather patterns'],
+            ['title' => 'Art: Color Theory', 'description' => 'Learn about primary, secondary, and complementary colors'],
+            ['title' => 'Art: Still Life Drawing', 'description' => 'Draw objects realistically using shading and perspective'],
+            ['title' => 'Music: Note Reading', 'description' => 'Read and play notes on staff for different instruments'],
+            ['title' => 'Music: Rhythm Practice', 'description' => 'Practice timing, tempo, and beat with exercises'],
+            ['title' => 'Computer Science: Algorithms', 'description' => 'Learn sorting and searching algorithms with examples'],
+            ['title' => 'Computer Science: Data Structures', 'description' => 'Implement arrays, lists, stacks, and queues'],
+            ['title' => 'Programming: Python Loops', 'description' => 'Write loops for repetitive tasks and problem solving'],
+            ['title' => 'Programming: Python Functions', 'description' => 'Create reusable functions for modular code'],
+            ['title' => 'Programming: File Handling', 'description' => 'Read and write text files in Python'],
+            ['title' => 'Programming: Object-Oriented Programming', 'description' => 'Create classes and objects in Python or Java'],
+            ['title' => 'Robotics: Sensors and Motors', 'description' => 'Learn how sensors detect and motors respond in robots'],
+            ['title' => 'Robotics: Build a Simple Robot', 'description' => 'Assemble a basic robot and program it to move'],
+            ['title' => 'IoT: Introduction', 'description' => 'Connect sensors to microcontrollers and read data'],
+            ['title' => 'IoT: Basic Projects', 'description' => 'Build a simple IoT device and collect data'],
+            ['title' => 'Digital Marketing: SEO Basics', 'description' => 'Learn search engine optimization techniques'],
+            ['title' => 'Digital Marketing: Social Media', 'description' => 'Create and plan social media campaigns'],
+            ['title' => 'Project Management: Planning', 'description' => 'Learn to create project plans and schedules'],
+            ['title' => 'Project Management: Execution', 'description' => 'Implement project plans and track progress'],
+            ['title' => 'Leadership: Teamwork', 'description' => 'Develop skills to work effectively in teams'],
+            ['title' => 'Leadership: Decision Making', 'description' => 'Practice making informed decisions in projects'],
+            ['title' => 'Ethical Hacking: Basics', 'description' => 'Understand cybersecurity principles and safe testing methods'],
+            ['title' => 'Ethical Hacking: Penetration Testing', 'description' => 'Perform safe penetration tests in controlled environments'],
+            ['title' => 'Machine Learning: Introduction', 'description' => 'Learn supervised and unsupervised learning concepts'],
+            ['title' => 'Machine Learning: Regression', 'description' => 'Apply regression techniques to predict data'],
+            ['title' => 'Deep Learning: Neural Networks', 'description' => 'Build and train simple neural networks'],
+            ['title' => 'Cloud Computing: AWS Basics', 'description' => 'Learn cloud concepts and deploy simple applications'],
+            ['title' => 'Cloud Computing: Azure Basics', 'description' => 'Deploy applications and learn cloud services with Azure'],
+        ];
+
+        foreach ($works as $work) {
+            $work['course_id'] = Course::inRandomOrder()->first()->id;
+            $work['teacher_id'] = Teacher::inRandomOrder()->first()->id;
+            Work::create($work);
+        };
+    }
+}
