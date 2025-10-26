@@ -26,7 +26,19 @@ class Course extends Model
         return $this->belongsToMany(Student::class);
     }
 
-    public function works() {
+    public function works()
+    {
         return $this->hasMany(Work::class);
     }
+
+    public function getName()
+    {
+        $locale = app()->getLocale();
+
+        if ($locale == 'tm') {
+            return $this->name_tm ?: $this->name;
+        }
+        return $this->name;
+    }
+
 }

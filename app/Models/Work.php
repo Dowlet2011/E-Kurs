@@ -14,11 +14,23 @@ class Work extends Model
         'file_path',
     ];
 
-    public function course() {
+    public function course()
+    {
         return $this->belongsTo(Course::class);
     }
 
-    public function teacher() {
+    public function teacher()
+    {
         return $this->belongsTo(Teacher::class);
     }
+    public function getName()
+    {
+        $locale = app()->getLocale();
+
+        if ($locale == 'tm') {
+            return $this->name_tm ?: $this->name;
+        }
+        return $this->name;
+    }
+
 }
