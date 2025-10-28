@@ -10,7 +10,7 @@
             <div class="h1 fw-bold">
                 <div id="wrapper">
                     <span id="e" class="text-white">E -</span>
-                    <span id="kurs" class="text-white">KURS</span>
+                    <span id="kurs" class="text-white">{{ __('app.course') }}</span>
                 </div>
             </div>
             <div class="h1 my-4 text-white">{{ __('app.welcome') }}</div>

@@ -25,16 +25,18 @@ class LoginController extends Controller
             ],
         ]);
 
-        $role = $request->role ? $request->role : 'Teacher';
+        $role = $request->role;
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if ($role = 'Teacher') {
+            if ($role == 'Teacher') {
                 return redirect()->route('home')->with([
                     'success' => "Ustunlikli giris edildi"
                 ]);
-            } else if ($role = 'Admin') {
-
+            } else if ($role == 'Admin') {
+                return redirect()->route('admin')->with([
+                    'success' => "Ustunlikli giris edildi"
+                ]);
             }
         }
 

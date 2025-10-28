@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     public function index() {
-        return view('client.frontend.profile');
+        
+        $user = auth()->user();
+        $teacher = $user->teacher;
+
+        return view('client.frontend.profile')->with([
+            'teacher' => $teacher,
+            'courses' => $teacher->course,
+        ]);
     }
 }

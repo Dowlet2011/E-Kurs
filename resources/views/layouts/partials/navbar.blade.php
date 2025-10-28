@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
     <div class="container-lg">
-        <a class="navbar-brand fw-bold" href="">E-Kurs</a>
+        <a class="navbar-brand fw-bold" href="{{ route('home') }}">E-{{ __('app.course') }}</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
-                <li class="nav-item"><a href="{{route('profile')}}" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="{{ route('courses.index') }}" class="nav-link">{{__('app.courses')}}</a></li>
+                <li class="nav-item"><a href="{{route('profile')}}" class="nav-link">{{__('app.profile')}}</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="langDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -19,7 +19,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link text-light">Logout</a></li>
+                <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link text-light">{{ __('app.logout') }}</a></li>
             </ul>
         </div>
     </div>

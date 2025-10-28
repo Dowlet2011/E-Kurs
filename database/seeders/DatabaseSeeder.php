@@ -23,12 +23,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'role' => 'admin',
         ]);
-
-        User::factory()->create([
-            'name' => 'Dowlet',
-            'password' => bcrypt('12345678'),
-            'role' => 'teacher',
-        ]);
         
         Teacher::factory(30)->create();
         Student::factory(600)->create();
@@ -36,6 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CourseSeeder::class,
             WorksSeeder::class,
+            CourseStudentSeeder::class,
         ]);
     }
 }
