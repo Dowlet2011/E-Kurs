@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Models\Work;
 use App\Models\Course;
 use App\Models\Student;
 use App\Models\Teacher;
-use App\Models\User;
-use App\Models\Work;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +24,9 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'role' => 'admin',
         ]);
-        
+
+        Storage::disk('public')->deleteDirectory('lessons');
+
         Teacher::factory(30)->create();
         Student::factory(600)->create();
 

@@ -21,7 +21,7 @@ class LoginController extends Controller
             'password' => ['required'],
             'role' => [
                 'required',
-                Rule::in(['Teacher', 'Admin']),
+                Rule::in(['Student', 'Teacher', 'Admin']),
             ],
         ]);
 
@@ -30,6 +30,10 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if ($role == 'Teacher') {
+                return redirect()->route('home')->with([
+                    'success' => "Ustunlikli giris edildi"
+                ]);
+            } else if ($role == 'Student') {
                 return redirect()->route('home')->with([
                     'success' => "Ustunlikli giris edildi"
                 ]);

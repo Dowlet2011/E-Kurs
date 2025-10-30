@@ -10,21 +10,17 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class TeacherFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
-        $userId = User::inRandomOrder()->first()->id;
-        
+        $teacherUserId = User::inRandomOrder()
+            ->where('role', 'Teacher')
+            ->first()->id;
         return [
-            'user_id'=> $userId,
-            'name'=> fake()->firstName(),
-            'surname'=> fake()->lastName(),
-            'age'=> fake()->numberBetween(20,80),
-            'phone_num'=> fake()->phoneNumber(),
+            'user_id' => $teacherUserId,
+            'name' => fake()->firstName(),
+            'surname' => fake()->lastName(),
+            'age' => fake()->numberBetween(20, 80),
+            'phone_num' => fake()->phoneNumber(),
         ];
     }
 }
